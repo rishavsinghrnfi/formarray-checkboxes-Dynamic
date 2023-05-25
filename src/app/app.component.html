@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  users
+  <br>
+  <label formArrayName="participants" *ngFor="let p of participantsFormArray.controls; let i = index">
+    <input type="checkbox" [formControlName]="i">
+    {{participantIds[i]}}
+  </label>
+
+<br>
+<!-- Groups
+<br>
+  <label formArrayName="userGroups" *ngFor="let p of userGroupsFormArray.controls; let i = index">
+    <input type="checkbox" [formControlName]="i">
+    {{groupIds[i]}}
+  </label> -->
+  <button type="submit" [disabled]="form.invalid">submit</button>
+</form>
